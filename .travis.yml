@@ -10,3 +10,17 @@ script:
 
 language:
   generic
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "ca-east-1"
+  # region is not accurate, no actual beanstalk  
+  app: "docker-react"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-ca-east-1-674532327654647"
+  # bucket_name not accurate, no actual beanstalk
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
